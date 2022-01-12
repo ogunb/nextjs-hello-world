@@ -2,20 +2,25 @@ import Image from "next/image";
 import Head from "next/head";
 import Layout from "../../components/layout";
 import { getAllPostsIds, getPostData } from "../../lib/posts";
+import Date from "../../components/date";
 
 export default function Post({ post }) {
   console.log(post);
   return (
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>{post.title}</title>
       </Head>
 
-      {post.title}
-      <br />
-      {post.id}
-      <br />
-      {post.date}
+      <article>
+        <h1>{post.title}</h1>
+
+        <div className="text-gray-400">
+          <Date dateString={post.date}></Date>
+        </div>
+
+        <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      </article>
     </Layout>
   );
 }
