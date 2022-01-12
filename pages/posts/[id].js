@@ -5,7 +5,6 @@ import { getAllPostsIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 
 export default function Post({ post }) {
-  console.log(post);
   return (
     <Layout>
       <Head>

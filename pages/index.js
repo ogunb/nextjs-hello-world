@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Date from "../components/date";
 
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
@@ -26,11 +27,13 @@ export default function Home({ allPosts }) {
           <ul>
             {allPosts.map(({ id, date, title }) => (
               <li key={id}>
-                {title}
+                <Link href={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
                 <br />
-                {id}
-                <br />
-                {date}
+                <small className="text-gray-400">
+                  <Date dateString={date} />
+                </small>
               </li>
             ))}
           </ul>
