@@ -7,7 +7,7 @@ export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }) {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto prose">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
